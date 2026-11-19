@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light dark;
+  --page: #f8fafc;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #4d586c;
+  --line: #cbd5e1;
+  --link: #0847a6;
+  --focus: #1849ac;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #111827;
+    --surface: #172033;
+    --text: #edf3fa;
+    --muted: #c1cbdb;
+    --line: #42516a;
+    --link: #a9c9ff;
+    --focus: #a9c9ff;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--text); background: var(--page); }
+.wrap { width: min(100% - 2rem, 46rem); margin-inline: auto; }
+header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.site-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 1.5rem; align-items: center; padding-block: 1rem; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+nav a, .brand { min-height: 2.25rem; display: inline-flex; align-items: center; }
+.brand { color: var(--text); font-weight: 750; font-size: 1.15rem; text-decoration: none; }
+[aria-current="page"] { color: var(--text); font-weight: 700; }
+main { padding-block: clamp(2.5rem, 7vw, 5rem) 3rem; }
+h1, h2 { line-height: 1.2; letter-spacing: -.025em; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); margin-block: 0 1.25rem; }
+h2 { font-size: 1.35rem; margin-block: 2rem .5rem; }
+p, li { overflow-wrap: anywhere; }
+p { margin-block: .5rem 1rem; }
+.intro { font-size: 1.125rem; color: var(--muted); }
+a { color: var(--link); text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: .14em; }
+a:focus-visible { outline: 2px solid var(--focus); outline-offset: .25rem; border-radius: .125rem; }
+ol, ul { padding-inline-start: 1.5rem; }
+li + li { margin-block-start: .6rem; }
+code { font-size: 1em; }
+.directory { margin-block-start: 1.5rem; }
+footer { padding-block: 1rem 1.75rem; border-top: 1px solid var(--line); }
+.skip { position: absolute; z-index: 1; inset: .5rem auto auto .5rem; padding: .55rem .85rem; background: var(--surface); transform: translateY(-160%); }
+.skip:focus { transform: translateY(0); }
